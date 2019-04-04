@@ -1,7 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,800);
 /* Reset.less
  * Props to Eric Meyer (meyerweb.com) for his CSS reset file. We're using an adapted version here	that cuts out some of the reset HTML elements we will never need here (i.e., dfn, samp, etc).
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
- @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,800');
  html,
  body {
    margin: 0;
@@ -157,8 +157,6 @@
  }
  input[type="search"] {
    -webkit-appearance: textfield;
-   -webkit-box-sizing: content-box;
-   -moz-box-sizing: content-box;
    box-sizing: content-box;
  }
  input[type="search"]::-webkit-search-decoration {
@@ -168,12 +166,33 @@
    overflow: auto;
    vertical-align: top;
  }
- @keyframes spin {
+ @-webkit-keyframes spin {
    0% {
-     transform: rotate(0deg);
+     -webkit-transform: rotate(0deg);
+             transform: rotate(0deg);
    }
    100% {
-     transform: rotate(359deg);
+     -webkit-transform: rotate(359deg);
+             transform: rotate(359deg);
+   }
+ }
+ @keyframes spin {
+   0% {
+     -webkit-transform: rotate(0deg);
+             transform: rotate(0deg);
+   }
+   100% {
+     -webkit-transform: rotate(359deg);
+             transform: rotate(359deg);
+   }
+ }
+ @-webkit-keyframes glow {
+   0%,
+   100% {
+     opacity: 1;
+   }
+   50% {
+     opacity: 0.5;
    }
  }
  @keyframes glow {
@@ -190,7 +209,9 @@
    word-break: break-all;
    -ms-word-break: break-all;
    word-break: break-word;
-   hyphens: auto;
+   -webkit-hyphens: auto;
+       -ms-hyphens: auto;
+           hyphens: auto;
  }
  .type-light {
    font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -298,6 +319,18 @@
    color: #333;
    outline: none;
  }
+ input[type="text"] ::-webkit-input-placeholder,
+ input[type="email"] ::-webkit-input-placeholder,
+ input[type="password"] ::-webkit-input-placeholder,
+ textarea ::-webkit-input-placeholder {
+   color: #778b91;
+ }
+ input[type="text"] ::-ms-input-placeholder,
+ input[type="email"] ::-ms-input-placeholder,
+ input[type="password"] ::-ms-input-placeholder,
+ textarea ::-ms-input-placeholder {
+   color: #778b91;
+ }
  input[type="text"] ::placeholder,
  input[type="email"] ::placeholder,
  input[type="password"] ::placeholder,
@@ -332,7 +365,8 @@
    left: 50%;
    width: 0.85em;
    height: 0.85em;
-   transform: translate3d(-50%, -50%, 0);
+   -webkit-transform: translate3d(-50%, -50%, 0);
+           transform: translate3d(-50%, -50%, 0);
    background: transparent;
    box-shadow: #2cc5d2 0 0 0 1px inset;
    content: '';
@@ -348,12 +382,14 @@
    speak: none;
    font-style: normal;
    font-weight: normal;
+   -webkit-font-feature-settings: normal;
+           font-feature-settings: normal;
    font-variant: normal;
    text-transform: none;
    line-height: 1;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   content: "\e65e";
+   content: "\E65E";
  }
  .input-symbol {
    display: inline-block;
@@ -380,7 +416,8 @@
  .input-symbol [class^="icon-"],
  .input-symbol [class*=" icon-"] {
    transition: all 300ms ease-in;
-   transform: translate3d(0, -50%, 0);
+   -webkit-transform: translate3d(0, -50%, 0);
+           transform: translate3d(0, -50%, 0);
    background: transparent;
    color: #aaa;
    font-size: 1em;
@@ -402,6 +439,8 @@
    speak: none;
    font-style: normal;
    font-weight: normal;
+   -webkit-font-feature-settings: normal;
+           font-feature-settings: normal;
    font-variant: normal;
    text-transform: none;
    line-height: 1;
@@ -410,391 +449,391 @@
    -moz-osx-font-smoothing: grayscale;
  }
  .icon-graphql:before {
-   content: "\e90a";
+   content: "\E90A";
  }
  .icon-redux:before {
-   content: "\e908";
+   content: "\E908";
  }
  .icon-grid:before {
-   content: "\e909";
+   content: "\E909";
  }
  .icon-redirect:before {
-   content: "\e907";
+   content: "\E907";
  }
  .icon-grow:before {
-   content: "\e903";
+   content: "\E903";
  }
  .icon-lightning:before {
-   content: "\e904";
+   content: "\E904";
  }
  .icon-request-change:before {
-   content: "\e905";
+   content: "\E905";
  }
  .icon-transfer:before {
-   content: "\e906";
+   content: "\E906";
  }
  .icon-calendar:before {
-   content: "\e902";
+   content: "\E902";
  }
  .icon-sidebar:before {
-   content: "\e900";
+   content: "\E900";
  }
  .icon-tablet:before {
-   content: "\e901";
+   content: "\E901";
  }
  .icon-atmosphere:before {
-   content: "\e671";
+   content: "\E671";
  }
  .icon-browser:before {
-   content: "\e672";
+   content: "\E672";
  }
  .icon-database:before {
-   content: "\e673";
+   content: "\E673";
  }
  .icon-expand-alt:before {
-   content: "\e674";
+   content: "\E674";
  }
  .icon-mobile:before {
-   content: "\e675";
+   content: "\E675";
  }
  .icon-watch:before {
-   content: "\e676";
+   content: "\E676";
  }
  .icon-home:before {
-   content: "\e600";
+   content: "\E600";
  }
  .icon-user-alt:before {
-   content: "\e601";
+   content: "\E601";
  }
  .icon-user:before {
-   content: "\e602";
+   content: "\E602";
  }
  .icon-user-add:before {
-   content: "\e603";
+   content: "\E603";
  }
  .icon-users:before {
-   content: "\e604";
+   content: "\E604";
  }
  .icon-profile:before {
-   content: "\e605";
+   content: "\E605";
  }
  .icon-bookmark:before {
-   content: "\e606";
+   content: "\E606";
  }
  .icon-bookmark-hollow:before {
-   content: "\e607";
+   content: "\E607";
  }
  .icon-star:before {
-   content: "\e608";
+   content: "\E608";
  }
  .icon-star-hollow:before {
-   content: "\e609";
+   content: "\E609";
  }
  .icon-circle:before {
-   content: "\e60a";
+   content: "\E60A";
  }
  .icon-circle-hollow:before {
-   content: "\e60b";
+   content: "\E60B";
  }
  .icon-heart:before {
-   content: "\e60c";
+   content: "\E60C";
  }
  .icon-heart-hollow:before {
-   content: "\e60d";
+   content: "\E60D";
  }
  .icon-face-happy:before {
-   content: "\e60e";
+   content: "\E60E";
  }
  .icon-face-sad:before {
-   content: "\e60f";
+   content: "\E60F";
  }
  .icon-face-neutral:before {
-   content: "\e610";
+   content: "\E610";
  }
  .icon-lock:before {
-   content: "\e611";
+   content: "\E611";
  }
  .icon-unlock:before {
-   content: "\e612";
+   content: "\E612";
  }
  .icon-key:before {
-   content: "\e613";
+   content: "\E613";
  }
  .icon-arrow-left-alt:before {
-   content: "\e614";
+   content: "\E614";
  }
  .icon-arrow-right-alt:before {
-   content: "\e615";
+   content: "\E615";
  }
  .icon-sync:before {
-   content: "\e616";
+   content: "\E616";
  }
  .icon-reply:before {
-   content: "\e617";
+   content: "\E617";
  }
  .icon-expand:before {
-   content: "\e618";
+   content: "\E618";
  }
  .icon-arrow-left:before {
-   content: "\e619";
+   content: "\E619";
  }
  .icon-arrow-up:before {
-   content: "\e61a";
+   content: "\E61A";
  }
  .icon-arrow-down:before {
-   content: "\e61b";
+   content: "\E61B";
  }
  .icon-arrow-right:before {
-   content: "\e61c";
+   content: "\E61C";
  }
  .icon-chevron-down:before {
-   content: "\e61d";
+   content: "\E61D";
  }
  .icon-back:before {
-   content: "\e61e";
+   content: "\E61E";
  }
  .icon-download:before {
-   content: "\e61f";
+   content: "\E61F";
  }
  .icon-upload:before {
-   content: "\e620";
+   content: "\E620";
  }
  .icon-proceed:before {
-   content: "\e621";
+   content: "\E621";
  }
  .icon-info:before {
-   content: "\e622";
+   content: "\E622";
  }
  .icon-question:before {
-   content: "\e623";
+   content: "\E623";
  }
  .icon-alert:before {
-   content: "\e624";
+   content: "\E624";
  }
  .icon-edit:before {
-   content: "\e625";
+   content: "\E625";
  }
  .icon-paintbrush:before {
-   content: "\e626";
+   content: "\E626";
  }
  .icon-close:before {
-   content: "\e627";
+   content: "\E627";
  }
  .icon-trash:before {
-   content: "\e628";
+   content: "\E628";
  }
  .icon-cross:before {
-   content: "\e629";
+   content: "\E629";
  }
  .icon-delete:before {
-   content: "\e62a";
+   content: "\E62A";
  }
  .icon-power:before {
-   content: "\e62b";
+   content: "\E62B";
  }
  .icon-add:before {
-   content: "\e62c";
+   content: "\E62C";
  }
  .icon-plus:before {
-   content: "\e62d";
+   content: "\E62D";
  }
  .icon-document:before {
-   content: "\e62e";
+   content: "\E62E";
  }
  .icon-graph-line:before {
-   content: "\e62f";
+   content: "\E62F";
  }
  .icon-doc-chart:before {
-   content: "\e630";
+   content: "\E630";
  }
  .icon-doc-list:before {
-   content: "\e631";
+   content: "\E631";
  }
  .icon-category:before {
-   content: "\e632";
+   content: "\E632";
  }
  .icon-copy:before {
-   content: "\e633";
+   content: "\E633";
  }
  .icon-book:before {
-   content: "\e634";
+   content: "\E634";
  }
  .icon-certificate:before {
-   content: "\e636";
+   content: "\E636";
  }
  .icon-print:before {
-   content: "\e637";
+   content: "\E637";
  }
  .icon-list-unordered:before {
-   content: "\e638";
+   content: "\E638";
  }
  .icon-graph-bar:before {
-   content: "\e639";
+   content: "\E639";
  }
  .icon-menu:before {
-   content: "\e63a";
+   content: "\E63A";
  }
  .icon-filter:before {
-   content: "\e63b";
+   content: "\E63B";
  }
  .icon-ellipsis:before {
-   content: "\e63c";
+   content: "\E63C";
  }
  .icon-cog:before {
-   content: "\e63d";
+   content: "\E63D";
  }
  .icon-wrench:before {
-   content: "\e63e";
+   content: "\E63E";
  }
  .icon-nut:before {
-   content: "\e63f";
+   content: "\E63F";
  }
  .icon-camera:before {
-   content: "\e640";
+   content: "\E640";
  }
  .icon-eye:before {
-   content: "\e641";
+   content: "\E641";
  }
  .icon-photo:before {
-   content: "\e642";
+   content: "\E642";
  }
  .icon-video:before {
-   content: "\e643";
+   content: "\E643";
  }
  .icon-speaker:before {
-   content: "\e644";
+   content: "\E644";
  }
  .icon-phone:before {
-   content: "\e645";
+   content: "\E645";
  }
  .icon-flag:before {
-   content: "\e646";
+   content: "\E646";
  }
  .icon-pin:before {
-   content: "\e647";
+   content: "\E647";
  }
  .icon-compass:before {
-   content: "\e648";
+   content: "\E648";
  }
  .icon-globe:before {
-   content: "\e649";
+   content: "\E649";
  }
  .icon-location:before {
-   content: "\e64a";
+   content: "\E64A";
  }
  .icon-search:before {
-   content: "\e64b";
+   content: "\E64B";
  }
  .icon-timer:before {
-   content: "\e64c";
+   content: "\E64C";
  }
  .icon-time:before {
-   content: "\e64d";
+   content: "\E64D";
  }
  .icon-dashboard:before {
-   content: "\e64e";
+   content: "\E64E";
  }
  .icon-hourglass:before {
-   content: "\e64f";
+   content: "\E64F";
  }
  .icon-play:before {
-   content: "\e650";
+   content: "\E650";
  }
  .icon-stop:before {
-   content: "\e651";
+   content: "\E651";
  }
  .icon-email:before {
-   content: "\e652";
+   content: "\E652";
  }
  .icon-comment:before {
-   content: "\e653";
+   content: "\E653";
  }
  .icon-link:before {
-   content: "\e654";
+   content: "\E654";
  }
  .icon-paperclip:before {
-   content: "\e655";
+   content: "\E655";
  }
  .icon-box:before {
-   content: "\e656";
+   content: "\E656";
  }
  .icon-structure:before {
-   content: "\e657";
+   content: "\E657";
  }
  .icon-commit:before {
-   content: "\e658";
+   content: "\E658";
  }
  .icon-cpu:before {
-   content: "\e659";
+   content: "\E659";
  }
  .icon-memory:before {
-   content: "\e65a";
+   content: "\E65A";
  }
  .icon-outbox:before {
-   content: "\e65b";
+   content: "\E65B";
  }
  .icon-share:before {
-   content: "\e65c";
+   content: "\E65C";
  }
  .icon-button:before {
-   content: "\e65d";
+   content: "\E65D";
  }
  .icon-check:before {
-   content: "\e65e";
+   content: "\E65E";
  }
  .icon-form:before {
-   content: "\e65f";
+   content: "\E65F";
  }
  .icon-admin:before {
-   content: "\e660";
+   content: "\E660";
  }
  .icon-paragraph:before {
-   content: "\e661";
+   content: "\E661";
  }
  .icon-bell:before {
-   content: "\e662";
+   content: "\E662";
  }
  .icon-rss:before {
-   content: "\e663";
+   content: "\E663";
  }
  .icon-basket:before {
-   content: "\e664";
+   content: "\E664";
  }
  .icon-credit:before {
-   content: "\e665";
+   content: "\E665";
  }
  .icon-support:before {
-   content: "\e666";
+   content: "\E666";
  }
  .icon-shield:before {
-   content: "\e667";
+   content: "\E667";
  }
  .icon-beaker:before {
-   content: "\e668";
+   content: "\E668";
  }
  .icon-google:before {
-   content: "\e669";
+   content: "\E669";
  }
  .icon-gdrive:before {
-   content: "\e66a";
+   content: "\E66A";
  }
  .icon-youtube:before {
-   content: "\e66b";
+   content: "\E66B";
  }
  .icon-facebook:before {
-   content: "\e66c";
+   content: "\E66C";
  }
  .icon-thumbs-up:before {
-   content: "\e66d";
+   content: "\E66D";
  }
  .icon-twitter:before {
-   content: "\e66e";
+   content: "\E66E";
  }
  .icon-github:before {
-   content: "\e66f";
+   content: "\E66F";
  }
  .icon-meteor:before {
-   content: "\e670";
+   content: "\E670";
  }
  a {
    transition: all 200ms ease-in;
@@ -825,15 +864,18 @@
  }
  .list-heading .icon-sync {
    opacity: 1;
-   animation: spin 2s infinite linear;
+   -webkit-animation: spin 2s infinite linear;
+           animation: spin 2s infinite linear;
    display: inline-block;
    margin-right: 4px;
  }
  .list-item {
    font-size: 14px;
    line-height: 20px;
+   display: -webkit-flex;
    display: flex;
-   flex-wrap: wrap;
+   -webkit-flex-wrap: wrap;
+           flex-wrap: wrap;
    height: 3rem;
    width: 100%;
    background: white;
@@ -843,7 +885,8 @@
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
-   flex: 1;
+   -webkit-flex: 1 1;
+           flex: 1 1;
  }
  .list-item input[type="text"] {
    background: transparent;
@@ -900,14 +943,17 @@
    height: 3rem;
    width: 100%;
    background: white;
+   display: -webkit-flex;
    display: flex;
-   align-items: center;
+   -webkit-align-items: center;
+           align-items: center;
    line-height: 1rem;
    padding-left: 16px;
  }
  .loading-item .glow-checkbox,
  .loading-item .glow-text span {
-   animation: glow 1.5s ease-in-out infinite;
+   -webkit-animation: glow 1.5s ease-in-out infinite;
+           animation: glow 1.5s ease-in-out infinite;
    background: #eee;
    color: transparent;
    cursor: progress;
@@ -938,7 +984,8 @@
    left: 0;
    width: auto;
    height: auto;
-   transform: translate3d(0, -50%, 0);
+   -webkit-transform: translate3d(0, -50%, 0);
+           transform: translate3d(0, -50%, 0);
    text-align: center;
  }
  .wrapper-message [class^="icon-"],
@@ -992,3 +1039,5 @@
    vertical-align: top;
    max-width: 100%;
  }
+
+/*# sourceMappingURL=main.css.map*/
